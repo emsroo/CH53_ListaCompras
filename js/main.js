@@ -175,17 +175,17 @@ window.addEventListener("load", function (event) {
 });// window.addEventListener load
 
 
-btnClear=document.getElementById("btnClear");
+btnClear = document.getElementById("btnClear");
 
 
-btnClear.addEventListener("click", function(event){
+btnClear.addEventListener("click", function (event) {
     event.preventDefault();
     console.log("yei you clicked");
 
     // delete data from local storage
     localStorage.removeItem("datos");
     localStorage.removeItem("resumen");
-    
+
     // Reset State 
     txtName.style.border = "";
     txtNumber.style.border = "";
@@ -198,7 +198,11 @@ btnClear.addEventListener("click", function(event){
     contadorProductos.innerText = "";
 
     // //detele table, MUCHO OJO AQUI, NO ES NECESARIO BEFOREEND
-    cuerpoTabla.innerHTML="";
+    cuerpoTabla.innerHTML = "";
+
+    cont = 0;
+    costoTotal = 0;
+    totalEnProductos = 0;
 
 }); //btn mostrar
 
@@ -206,8 +210,8 @@ btnClear.addEventListener("click", function(event){
 
 // agregar la funcionalidad del boton limpiar todo
 // resumen
-// tabla 
-// campos 
+// tabla
+// campos
 // alerta
 // dos variables de localStorage solo resumen y datos para no afectar  [done]
 
