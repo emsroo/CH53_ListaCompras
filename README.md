@@ -1,2 +1,3 @@
 # CH53_ListaCompras
-Ejercicio de Javascript
+
+Website Shopping List: https://emsroo.github.io/CH53_ListaCompras/ 
