@@ -18,6 +18,10 @@ let totalEnProductos = 0;
 //almacena los elementos de la tabla en localStorage 
 let datos = new Array(); //[]
 //{}
+
+//recrear la tabla siempre 
+// let tablaListaCompras=getElementById("tablaListaCompras")
+
 function validarCantidad() {
     if (txtNumber.value.trim().length <= 0) {
         console.log("false");
@@ -152,7 +156,7 @@ window.addEventListener("load", function (event) {
         cuerpoTabla.insertAdjacentHTML("beforeend", row);
     });
     // -------------------------------------------------------
-    
+
     if (localStorage.getItem("resumen") != null) {
         //Me traigo los datos, el this es para restaurar los datos desde aqui 
         let resumen = JSON.parse(localStorage.getItem("resumen"));
@@ -168,7 +172,45 @@ window.addEventListener("load", function (event) {
     contadorProductos.innerText = cont;
     // ------------------------------------------------------
 
-});//
+});// window.addEventListener load
+
+
+btnClear=document.getElementById("btnClear");
+
+
+btnClear.addEventListener("click", function(event){
+    event.preventDefault();
+    console.log("yei you clicked");
+
+    // delete data from local storage
+    localStorage.removeItem("datos");
+    localStorage.removeItem("resumen");
+    
+    // Reset State 
+    txtName.style.border = "";
+    txtNumber.style.border = "";
+    alertValidacionesTexto.innerHTML = "";
+    alertValidaciones.style.display = "none";
+
+    // Reset State for the table
+    productosTotal.innerText = "";
+    precioTotal.innerText = "";
+    contadorProductos.innerText = "";
+
+    // //detele table, MUCHO OJO AQUI, NO ES NECESARIO BEFOREEND
+    cuerpoTabla.innerHTML="";
+
+}); //btn mostrar
+
+
+
+// agregar la funcionalidad del boton limpiar todo
+// resumen
+// tabla 
+// campos 
+// alerta
+// dos variables de localStorage solo resumen y datos para no afectar  [done]
+
 
 
 
